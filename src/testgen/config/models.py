@@ -41,6 +41,7 @@ class ProjectConfig(BaseModel):
     project_path: Path
     tests_path: Path
     testing_framework: Literal["gtest", "catch2", "doctest", "other"] = "other"
+    cpp_standard: Literal["c++11", "c++14", "c++17", "c++20", "c++23"] = "c++17"
 
 
 class ValidationScriptsConfig(BaseModel):

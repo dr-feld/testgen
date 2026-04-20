@@ -19,7 +19,7 @@ class Runner:
 
     def __init__(self, config: AppConfig) -> None:
         self.config = config
-        self._parser = CppParser()
+        self._parser = CppParser(cpp_standard=config.project.cpp_standard)
         self._writer = TestWriter(config.project)
         self._llm_client = LLMClient(config.llm)
         self._prompt_builder = PromptBuilder(config.llm)

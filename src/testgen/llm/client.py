@@ -37,7 +37,7 @@ class LLMClient:
         self._client = httpx.Client(
             follow_redirects=True,
             timeout=config.timeout_seconds,
-            proxies=config.proxy,
+            proxy=config.proxy,
         )
 
     def complete(self, system_prompt: str, user_prompt: str) -> GenerationResult:
